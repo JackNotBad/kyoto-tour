@@ -69,7 +69,7 @@
   --dark-thick-border: 2px solid var(--lighter-dark);
 }
 
-/* Global & utilities */
+/* Global & utilitaires */
 
 body {
   font-family: var(--base-font);
@@ -77,6 +77,7 @@ body {
   background-color: var(--light-white);
 }
 
+/* Car ne s'hérite pas sur ces éléments de base */
 button,
 input {
   font-family: var(--base-font);
@@ -94,22 +95,18 @@ input {
   color: var(--light-white);
   font-weight: 900;
   text-transform: uppercase;
+  text-shadow: 0 3px 0px var(--lighter-dark), 0 4px 0px var(--lighter-dark);
   margin-bottom: 20px;
-  text-shadow: 
-  0 3px 0px var(--lighter-dark), 
-  0 4px 0px var(--lighter-dark);
 }
 
 .heading-2 {
   font-size: var(--fs-40);
   font-family: var(--accent-font);
 }
-
 .surtitle,
 .heading-2 {
   text-align: center;
 }
-
 .surtitle {
   color: var(--gray);
   font-size: var(--fs-18);
@@ -140,7 +137,6 @@ nav {
   justify-content: center;
   border-bottom: var(--light-dark-border);
 }
-
 nav a {
   text-decoration: none;
   text-transform: uppercase;
@@ -165,6 +161,7 @@ nav a:hover {
   text-align: center;
 }
 
+/* à mettre dans utilitaire? */
 .hero-btn {
   min-width: 175px;
   padding: 10px;
@@ -180,6 +177,7 @@ nav a:hover {
   text-transform: uppercase;
   font-size: var(--fs-14);
   font-weight: 600;
+  text-decoration-color: #111;
 }
 .hero-btn-1 {
   background-color: var(--light-white);
@@ -198,6 +196,7 @@ nav a:hover {
 .hero-btn-2 {
   margin-left: 16px;
 }
+
 .hero-btn img {
   width: 20px;
   margin-left: 10px;
@@ -220,7 +219,6 @@ nav a:hover {
     margin-left: 10px;
   }
 }
-
 @media (max-width: 600px) {
   .hero-section {
     padding-top: 100px;
@@ -228,7 +226,7 @@ nav a:hover {
   }
 }
 
-/* Activities section */
+/* Section Activités */
 
 .activities-section {
   padding: 0 10px 62px;
@@ -242,12 +240,13 @@ nav a:hover {
   position: relative;
   box-shadow: var(--shadow-sm);
 }
+
 .negativ-container .heading-2 {
   margin-bottom: 60px;
 }
 .activity-container {
   max-width: 825px;
-  margin: 0 auto;
+  margin-inline: auto;
   min-height: 300px;
   display: flex;
   border-radius: 3px;
@@ -263,6 +262,12 @@ nav a:hover {
 .activity-container img {
   width: 50%;
   padding: 25px;
+}
+
+.activity-description {
+  width: 50%;
+}
+.activity-container img {
   object-fit: cover;
 }
 .activity-description {
@@ -279,7 +284,11 @@ nav a:hover {
 .activity-description p {
   line-height: 1.5;
   margin-bottom: 20px;
+  font-size: var(--fs-16);
   color: var(--light-gray);
+}
+.activity-description li {
+  list-style-type: none;
 }
 .activity-link {
   margin-top: auto;
@@ -294,7 +303,7 @@ nav a:hover {
   font-size: var(--fs-14);
   font-weight: 600;
   background-color: var(--light-white);
-  color: var(--dark-base);
+  color: rgb(30, 30, 30);
 }
 .activity-link:hover {
   background-color: var(--active-light-white);
@@ -320,10 +329,12 @@ nav a:hover {
   .activity-2 img {
     order: 1;
   }
+
   .activity-container img {
     width: 100%;
     padding: 25px;
   }
+
   .activity-description {
     padding: 0px 25px 25px;
     width: 100%;
@@ -331,6 +342,7 @@ nav a:hover {
 }
 
 /* Parallax */
+
 
 .parallax {
   min-height: 275px;
@@ -345,11 +357,13 @@ nav a:hover {
 }
 .japanese-text {
   font-size: var(--fs-64);
+  /* Pour rapprocher les deux sinon les kanjis prennent beaucoup de place */
   line-height: 1.2;
 }
 .parallax-text {
   font-size: var(--fs-26);
 }
+
 @media (max-width: 600px) {
   .parallax {
     min-height: 200px;
@@ -368,7 +382,6 @@ nav a:hover {
   padding: 44px 10px 136px;
   background-image: var(--radial-white-beige);
 }
-
 .pricing .heading-2 {
   margin-bottom: 62px;
 }
@@ -399,6 +412,7 @@ nav a:hover {
   justify-content: space-between;
   align-items: center;
 }
+
 .plan-line {
   width: 100%;
   margin: 0 10px;
@@ -411,6 +425,7 @@ nav a:hover {
   font-weight: bold;
   font-style: italic;
 }
+
 .card-subtitle {
   font-size: 14px;
   margin-bottom: 24px;
@@ -425,11 +440,12 @@ nav a:hover {
 }
 .pricing-card li:not(:last-of-type){
   margin-bottom: 14px;
-}
-.pricing-card li img{
+} 
+.pricing-card li img {
   width: 20px;
   margin-right: 10px;
 }
+
 .pricing-card button {
   margin-top: auto;
   padding: 10px;
@@ -444,6 +460,7 @@ nav a:hover {
   color: var(--light-white);
   background-color: var(--dark-base);
 }
+
 .c1 {
   transform: translateY(10px) rotate(-10deg);
 }
@@ -456,7 +473,7 @@ nav a:hover {
 }
 
 .shadow {
-  display: flex;
+  display: block;
   margin: 20px auto 0;
 }
 
@@ -486,15 +503,20 @@ nav a:hover {
   .card-subtitle {
     margin-bottom: 24px;
   }
+
   .pricing-card button {
     padding: 8px;
     font-size: var(--fs-14);
   }
-  .c1,.c2,.c3 {
+  .c1 {
     transform: none;
   }
   .c2 {
+    transform: none;
     order: 3;
+  }
+  .c3 {
+    transform: none;
   }
   .shadow {
     display: none;
@@ -502,8 +524,6 @@ nav a:hover {
 }
 
 /* Contact */
-
-
 .contact {
   padding: 120px 10px;
   background-image: url(ressources/tradition-japan.jpg);
@@ -518,9 +538,10 @@ nav a:hover {
   background-color: var(--almond);
   padding: 50px 40px 92px;
   border-radius: 25px;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
   border: var(--dark-thick-border);
 }
+
 .rounded-contact h2 {
   margin-bottom: 44px;
 }
@@ -528,27 +549,28 @@ nav a:hover {
   max-width: 450px;
   margin: 0 auto;
 }
-
 .contact-list img {
   width: 30px;
 }
 .contact-list li {
   border-radius: 5px;
+  /* background: var(--dark-base); */
   list-style-type: none;
   padding: 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* Deux fois pour le span et le lien */
+  /* dégradé différent du premier au niveau des images/ directions  */
   background-image: var(--light-orange-pinky);
   border: var(--dark-thick-border);
 }
-
-.contact-list li:not(:nth-child(3)) {
+.contact-list li:not(:nth-child(3)){
   margin-bottom: 15px;
 }
 
 .contact-list a, .contact-list span {
-  font-size:  var(--fs-20);
+  font-size: var(--fs-20);
   color: var(--dark-base);
   font-weight: 700;
 }
@@ -566,9 +588,10 @@ nav a:hover {
   .contact-list li {
     padding: 10px;
   }
-  .contact-list a, 
+  .contact-list a,
   .contact-list span {
-    font-size:  var(--fs-14);
+    font-size: var(--fs-14);
+    color: var(--dark-base);
   }
   .contact-list img {
     width: 20px;
@@ -582,7 +605,6 @@ footer {
   padding: 10px 0;
   text-align: center;
 }
-
 footer a {
   text-decoration-color: var(--dark-base);
   color: var(--dark-base);
