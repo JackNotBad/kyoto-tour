@@ -78,7 +78,8 @@ body {
 }
 
 button,
-input {
+input,
+a {
   font-family: var(--base-font);
 }
 
@@ -175,6 +176,7 @@ nav a:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 }
 .hero-btn span {
   text-transform: uppercase;
